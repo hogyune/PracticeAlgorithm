@@ -1,0 +1,22 @@
+kg = int(input())
+temp = 0
+
+a = int(kg / 5)
+flag = 0
+for i in range (a,-1,-1):
+    temp = kg - int(5*i)
+    if (((temp % 3) == 0) & (i != 0)):
+        kg = temp
+        a = i
+        flag = 1
+        b = int(temp / 3)
+        break
+    if i ==0:
+        a = 0
+        if((kg % 3) == 0):
+            flag = 1
+            b = int(kg / 3)
+if flag != 1:
+    print(-1)
+else:
+    print(a + b)
